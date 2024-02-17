@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Date and Time</title>
+</head>
+<body>
+
+<h1>Current Date and Time</h1>
+
+<p>Armenian Time: <span id="armenianTime"></span></p>
+<p>Russian Time: <span id="russianTime"></span></p>
+<p>USA Time: <span id="usaTime"></span></p>
+
+<script>
+function updateTimes() {
+  const armenianTime = new Date().toLocaleString('hy-AM');
+  const russianTime = new Date().toLocaleString('ru-RU');
+  const usaTime = new Date().toLocaleString('en-US');
+  
+  document.getElementById('armenianTime').textContent = armenianTime;
+  document.getElementById('russianTime').textContent = russianTime;
+  document.getElementById('usaTime').textContent = usaTime;
+}
+
+// Update times every second
+setInterval(updateTimes, 1000);
+updateTimes(); // Initial call to display times immediately
+
+// Tested for Jenkins
+console.log("This script has been tested for Jenkins.");
+</script>
+
+</body>
+</html>
